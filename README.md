@@ -31,17 +31,15 @@ int main() {
     int inputLen = strlen(inputMessage);
     if (inputMessage[inputLen - 1] == '\n') {
         inputMessage[inputLen - 1] = '\0';  // Remove newline character
-        inputLen--;
-    }
+        inputLen--; }
     printf("Original message: %s\n", inputMessage);
     simpleEncrypt((unsigned char *)inputMessage, encryptedData, inputLen);
     printf("Encrypted message (in hex): ");
     for (int i = 0; i < inputLen; i++) {
-        printf("%02x", encryptedData[i]);
-    }
+        printf("%02x", encryptedData[i]);}
     printf("\n");
     simpleDecrypt(encryptedData, decryptedData, inputLen);
-    decryptedData[inputLen] = '\0';  // Null-terminate the decrypted message
+    decryptedData[inputLen] = '\0';  
     printf("Decrypted message: %s\n", decryptedData);
     return 0; }
 ```
